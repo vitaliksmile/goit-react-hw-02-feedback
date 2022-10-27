@@ -25,7 +25,6 @@ class App extends Component {
     return (
       <>
         <h2>Please leave feedback</h2>
-
         {/* <button type="button" onClick={() => this.countFeedback('good')}>
           good
         </button>
@@ -46,11 +45,19 @@ class App extends Component {
         ))}
         <div>
           <h3>Statistics</h3>
-          <p>Good: {this.state.good}</p>
-          <p>Neutral: {this.state.neutral}</p>
-          <p>Bad: {this.state.bad}</p>
-          <p>Total: {this.countTotalFeedback()}</p>
-          <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
+          {this.countTotalFeedback() ? (
+            <div>
+              <p>Good: {this.state.good}</p>
+              <p>Neutral: {this.state.neutral}</p>
+              <p>Bad: {this.state.bad}</p>
+              <p>Total: {this.countTotalFeedback()}</p>
+              <p>
+                Positive feedback: {this.countPositiveFeedbackPercentage()}%
+              </p>
+            </div>
+          ) : (
+            <p>No feedback given</p>
+          )}
         </div>
       </>
     );
