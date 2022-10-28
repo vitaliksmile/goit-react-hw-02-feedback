@@ -3,6 +3,7 @@ import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
+import s from './App.module.css';
 
 class App extends Component {
   state = {
@@ -13,9 +14,6 @@ class App extends Component {
   countFeedback = meaning => {
     this.setState(prevState => ({ [meaning]: prevState[meaning] + 1 }));
   };
-  // countFeedback = propName => {
-  //   this.setState(prevState => ({ [propName]: prevState[propName] + 1 }));
-  // };
   countTotalFeedback() {
     return this.state.good + this.state.neutral + this.state.bad;
   }
@@ -27,7 +25,7 @@ class App extends Component {
     const meanings = Object.keys(this.state);
     // console.log(meanings);
     return (
-      <>
+      <div className={s.div}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={meanings}
@@ -49,7 +47,7 @@ class App extends Component {
             )}
           </Section>
         </div>
-      </>
+      </div>
     );
   }
 }
