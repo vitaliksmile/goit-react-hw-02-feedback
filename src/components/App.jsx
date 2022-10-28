@@ -25,15 +25,7 @@ class App extends Component {
     return (
       <>
         <h2>Please leave feedback</h2>
-        {/* <button type="button" onClick={() => this.countFeedback('good')}>
-          good
-        </button>
-        <button type="button" onClick={() => this.countFeedback('neutral')}>
-          neutral
-        </button>
-        <button type="button" onClick={() => this.countFeedback('bad')}>
-          bad
-        </button> */}
+
         {meanings.map(meaning => (
           <button
             key={meaning}
@@ -43,6 +35,17 @@ class App extends Component {
             {meaning}
           </button>
         ))}
+
+        {/* <button type="button" onClick={() => this.countFeedback('good')}>
+          good
+        </button>
+        <button type="button" onClick={() => this.countFeedback('neutral')}>
+          neutral
+        </button>
+        <button type="button" onClick={() => this.countFeedback('bad')}>
+          bad
+        </button> */}
+
         <div>
           <h3>Statistics</h3>
           {this.countTotalFeedback() ? (
